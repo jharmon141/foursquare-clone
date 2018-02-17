@@ -5,12 +5,16 @@
   "scripts": {
     "serve": "vue-cli-service serve --open",
     "build": "vue-cli-service build",
-    "test": "vue-cli-service test",
+    "test": "vue-cli-service test --watch",
     "lint": "vue-cli-service lint"
   },
   "dependencies": {
+    "axios": "^0.17.1",
     "vue": "^2.5.13",
-    "vue-router": "^3.0.1"
+    "vue-keep-scroll-position": "^0.1.2",
+    "vue-router": "^3.0.1",
+    "vue-scroll-behavior": "^0.2.0",
+    "vuetify": "^1.0.1"
   },
   "devDependencies": {
     "@vue/cli-plugin-babel": "^3.0.0-beta.1",

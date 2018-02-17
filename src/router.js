@@ -1,7 +1,7 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import Home from './views/Home.vue'
-import About from './views/About.vue'
+import ListView from './views/ListView.vue'
+import DetailView from './views/DetailView.vue'
 
 Vue.use(Router)
 
@@ -9,13 +9,13 @@ export default new Router({
   routes: [
     {
       path: '/',
-      name: 'home',
-      component: Home
+      name: 'list-view',
+      component: ListView
     },
     {
-      path: '/about',
-      name: 'about',
-      component: About
+      path: '/detail',
+      name: 'detail-view',
+      component: DetailView
     }
   ]
 })
