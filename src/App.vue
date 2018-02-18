@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <AppHeader :itemSelected="itemSelected" />
+    <AppHeader />
 
     <div id="main">
       <router-view v-bind="{ selectItem, places, loading, selectedItem }" />
@@ -20,7 +20,6 @@ export default {
   },
   data: () => ({
     loading: null,
-    itemSelected: false,
     places: [],
     selectedItem: null
   }),
