@@ -1,33 +1,33 @@
 <template>
-  <div id="app-header">
-    <div id="header-content">
 
-      <div v-if="$route.name=='list-view'" class="list-view">
-        <v-layout row>
-          <v-flex xs4 offset-xs4>
-            List
-          </v-flex>
-        </v-layout>
-      </div>
+  <header>
 
-      <div v-else-if="$route.name=='detail-view'" class="detail-view" >
-        <v-layout row>
-          <v-flex xs3>
-            <div @click="$router.push('/')" class="left-link">
-              <v-icon>chevron_left</v-icon>
-              List
-            </div>
-          </v-flex>
-          <v-flex xs4 offset-xs1>
-            <div class="list-view">
-              Detail
-            </div>
-          </v-flex>
-        </v-layout>
-      </div>
-
+    <div v-if="$route.name=='list-view'" class="list-view">
+      <v-layout row>
+        <v-flex xs4 offset-xs4>
+          List
+        </v-flex>
+      </v-layout>
     </div>
-  </div>
+
+    <div v-else-if="$route.name=='detail-view'" class="detail-view">
+      <v-layout row>
+        <v-flex xs3>
+          <div @click="$router.push('/')" class="left-link">
+            <v-icon>chevron_left</v-icon>
+            List
+          </div>
+        </v-flex>
+        <v-flex xs4 offset-xs1>
+          <div class="list-view">
+            Detail
+          </div>
+        </v-flex>
+      </v-layout>
+    </div>
+
+  </header>
+
 </template>
 
 
@@ -39,7 +39,7 @@ export default {
 
 
 <style scoped>
-#app-header {
+header {
   position: fixed;
   opacity: 0.99;
   z-index: 999;

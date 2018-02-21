@@ -37,7 +37,6 @@ export default {
 
 
 <style scoped>
-
 #list-view {
   position: absolute;
   width: 100%;
@@ -46,5 +45,4 @@ export default {
 .list {
   padding: 0px;
 }
-
 </style>

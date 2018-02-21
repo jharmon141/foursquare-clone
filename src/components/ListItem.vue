@@ -5,7 +5,7 @@
       <img :src="place.venue.featuredPhotos.items[0] | photo">
 
       <v-list-tile-content>
-        <v-list-tile-title v-html="place.venue.name"></v-list-tile-title>
+        <v-list-tile-title>{{ place.venue.name }}</v-list-tile-title>
         <v-list-tile-sub-title>{{ place.venue.location | address }}</v-list-tile-sub-title>
       </v-list-tile-content>
 
@@ -69,5 +69,4 @@ img {
   min-width: 80px;
   max-width: 80px;
 }
-
 </style>

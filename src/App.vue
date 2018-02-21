@@ -1,10 +1,11 @@
 <template>
   <div id="app">
+
     <AppHeader />
 
-    <div id="main">
+    <main>
       <router-view v-bind="{ selectItem, places, loading, selectedItem }" />
-    </div>
+    </main>
 
   </div>
 </template>
@@ -33,12 +34,14 @@ export default {
 
   created() {
     this.loading = true
+
     axios.get('https://api.foursquare.com/v2/venues/explore?checkin=checkin&client_id=VOOBH5VSIL11PX2DCD22GLDVTZDMQKC5MZKDR5SA4C4V2U1F&client_secret=YZCK5VBAURVS1E2ZZ4XP4ZOB04NRH0I3OEXPCE0RPOKWAYKG&limit=50&near=New York,NY&m=foursquare&sortByDistance=1&v=20140924&venuePhotos=1')
       .then((response) => {
         this.places = response.data.response.groups[0].items
         this.loading = false
       })
       .catch((error) => {
+        this.loading = false
         console.log(error)
       })
   }
@@ -55,7 +58,7 @@ export default {
   color: #2c3e50;
 }
 
-#main {
+main {
   position: absolute;
   top: 80px;
   left: 0;
