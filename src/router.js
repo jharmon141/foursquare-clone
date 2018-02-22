@@ -13,7 +13,7 @@ export default new Router({
       component: ListView
     },
     {
-      path: '/detail',
+      path: '/detail/:name',
       name: 'detail-view',
       component: DetailView
     }

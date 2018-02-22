@@ -27,8 +27,9 @@ export default {
 
   methods: {
     selectItem(item) {
+      const urlName = item.venue.name.toLowerCase().split(' ').join('+') 
       this.selectedItem = item
-      this.$router.push('/detail')
+      this.$router.push(`/detail/${urlName}`)
     }
   },
 
