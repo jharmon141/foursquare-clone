@@ -1,5 +1,5 @@
 <template>
-  <div id="list-item">
+  <div id="list-item" v-on:click="$emit('selectItem')">
     <v-list-tile>
 
       <img :src="place.venue.featuredPhotos.items[0] | photo">

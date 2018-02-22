@@ -8,7 +8,7 @@ import '@/filters'
 
 Vue.use(Vuetify)
 
-describe('App.vue', () => {
+describe('App', () => {
   it('data is passed to app layer on selection and route is changed to detail', () => {
     const Constructor = Vue.extend(App)
     const vm = new Constructor({ router }).$mount()

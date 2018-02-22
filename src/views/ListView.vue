@@ -7,7 +7,7 @@
       <v-list  v-else three-line>
         <ListItem 
           v-for="place in places" 
-          v-on:click.native="selectItem(place)"
+          v-on:selectItem="selectItem(place)"
           :key="place.referralId" 
           :place="place" />
       </v-list>
