@@ -35,8 +35,9 @@ export default {
 
   created() {
     this.loading = true
+    const urlName = `https://api.foursquare.com/v2/venues/explore?checkin=checkin&client_id=VZLRH3FKWTSLBOQAJKYD1K3JB2SY2GAZH44HJBQUDUENIR3Y&client_secret=3NARX2FU5LDX5N4SKCRUBKJPIVBAFNCPCY2APEHZ51AU24ED&limit=50&near=New York,NY&m=foursquare&sortByDistance=1&v=20140924&venuePhotos=1`
 
-    axios.get('https://api.foursquare.com/v2/venues/explore?checkin=checkin&client_id=VOOBH5VSIL11PX2DCD22GLDVTZDMQKC5MZKDR5SA4C4V2U1F&client_secret=YZCK5VBAURVS1E2ZZ4XP4ZOB04NRH0I3OEXPCE0RPOKWAYKG&limit=50&near=New York,NY&m=foursquare&sortByDistance=1&v=20140924&venuePhotos=1')
+    axios.get(urlName)
       .then((response) => {
         this.places = response.data.response.groups[0].items
         this.loading = false
