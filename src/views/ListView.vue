@@ -4,11 +4,11 @@
 
       <Loading v-if="loading" />
 
-      <v-list  v-else three-line>
-        <ListItem 
-          v-for="place in places" 
+      <v-list v-else
+        three-line>
+        <ListItem v-for="place in places"
           v-on:selectItem="selectItem(place)"
-          :key="place.referralId" 
+          :key="place.referralId"
           :place="place" />
       </v-list>
 

@@ -9,7 +9,7 @@ import '@/filters'
 Vue.use(Vuetify)
 
 describe('App', () => {
-  it('data is passed to app layer on selection and route is changed to detail', () => {
+  it('data is passed to app layer on selection and view is changed to detail', () => {
     const Constructor = Vue.extend(App)
     const vm = new Constructor({ router }).$mount()
     vm.places = mockData.response
@@ -19,7 +19,7 @@ describe('App', () => {
     vm.selectItem(mockData.item)
 
     expect(vm.selectedItem).to.equal(mockData.item)
-    expect(vm.$route.name).to.equal('detail-view')
+    expect(vm.itemSelected).to.equal(true)
   })
 
 

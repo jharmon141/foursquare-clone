@@ -1,10 +1,17 @@
 <template>
   <div id="app">
 
-    <AppHeader />
+    <AppHeader v-on:toggleView="toggleView"
+      :itemSelected="itemSelected" />
 
     <main>
-      <router-view v-bind="{ selectItem, places, loading, selectedItem }" />
+
+      <ListView v-if="!itemSelected"
+        v-bind="{ places, loading, selectItem }" />
+
+      <DetailView v-else
+        :selectedItem="selectedItem" />
+
     </main>
 
   </div>
@@ -13,23 +20,31 @@
 <script>
 import AppHeader from './components/AppHeader.vue'
 import axios from 'axios'
+import ListView from './views/ListView.vue'
+import DetailView from './views/DetailView.vue'
 
 export default {
   name: 'app',
   components: {
-    AppHeader
+    AppHeader,
+    ListView,
+    DetailView
   },
   data: () => ({
     loading: null,
     places: [],
-    selectedItem: null
+    selectedItem: null,
+    itemSelected: false
   }),
 
   methods: {
     selectItem(item) {
-      const urlName = item.venue.name.toLowerCase().split(' ').join('+') 
       this.selectedItem = item
-      this.$router.push(`/detail/${urlName}`)
+      this.toggleView()
+    },
+
+    toggleView() {
+      this.itemSelected = !this.itemSelected
     }
   },
 
@@ -53,7 +68,7 @@ export default {
 
 <style>
 #app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
+  font-family: "Avenir", Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
@@ -65,6 +80,6 @@ main {
   top: 80px;
   left: 0;
   bottom: 0;
-  right:0;
+  right: 0;
 }
 </style>

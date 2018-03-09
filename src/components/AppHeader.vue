@@ -2,7 +2,7 @@
 
   <header>
 
-    <div v-if="$route.name=='list-view'" class="list-view">
+    <div v-if="!itemSelected" class="list-view">
       <v-layout row>
         <v-flex xs4 offset-xs4>
           List
@@ -10,10 +10,10 @@
       </v-layout>
     </div>
 
-    <div v-else-if="$route.name=='detail-view'" class="detail-view">
+    <div v-else class="detail-view">
       <v-layout row>
         <v-flex xs3>
-          <div @click="$router.push('/')" class="left-link">
+          <div @click="$emit('toggleView')" class="left-link">
             <v-icon>chevron_left</v-icon>
             List
           </div>
@@ -33,7 +33,10 @@
 
 <script>
 export default {
-  name: 'AppHeader'
+  name: 'AppHeader',
+  props: {
+    itemSelected: Boolean
+  }
 }
 </script>
 

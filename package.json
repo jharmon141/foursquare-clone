@@ -14,7 +14,6 @@
     "dotenv": "^5.0.1",
     "vue": "^2.5.13",
     "vue-keep-scroll-position": "^0.1.2",
-    "vue-router": "^3.0.1",
     "vue-scroll-behavior": "^0.2.0",
     "vuetify": "^1.0.1"
   },
