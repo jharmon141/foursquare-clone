@@ -1,7 +1,6 @@
 import Vue from 'vue'
 import App from './App.vue'
 import './filters'
-import vueScrollBehavior from 'vue-scroll-behavior'
 import Vuetify from 'vuetify'
 import 'vuetify/dist/vuetify.min.css'
 
