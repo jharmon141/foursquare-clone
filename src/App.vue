@@ -50,7 +50,9 @@ export default {
 
   created() {
     this.loading = true
-    const urlName = `https://api.foursquare.com/v2/venues/explore?checkin=checkin&client_id=VZLRH3FKWTSLBOQAJKYD1K3JB2SY2GAZH44HJBQUDUENIR3Y&client_secret=3NARX2FU5LDX5N4SKCRUBKJPIVBAFNCPCY2APEHZ51AU24ED&limit=50&near=New York,NY&m=foursquare&sortByDistance=1&v=20140924&venuePhotos=1`
+    const client_id = process.env.VUE_APP_CLIENT_ID
+    const client_secret = process.env.VUE_APP_CLIENT_SECRET
+    const urlName = `https://api.foursquare.com/v2/venues/explore?checkin=checkin&client_id=${client_id}&client_secret=${client_secret}&limit=50&near=New York,NY&m=foursquare&sortByDistance=1&v=20140924&venuePhotos=1`
 
     axios.get(urlName)
       .then((response) => {
